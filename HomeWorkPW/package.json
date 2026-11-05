@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "e2e": "npx playwright test e2e.spec.js",
-    "Api": "npx playwright test api.spec.js"
+    "Api": "npx playwright test api.spec.js",
+    "All": "npx playwright test"
   },
   "keywords": [],
   "author": "",
