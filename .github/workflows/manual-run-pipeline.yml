@@ -29,14 +29,8 @@ jobs:
         run: npx playwright install --with-deps
 
 
-      - name: Run UI tests
-        run: npm run tests:ui -- --reporter=html
-        env:
-          PLAYWRIGHT_HTML_REPORT: playwright-report-ui
-
-
-      # !cancelled():
-      - name: Run API tests
+       !cancelled():
+      - name: Run All
         if: ${{ !cancelled() }}
         run: npm run tests:All -- --reporter=html
         env:
