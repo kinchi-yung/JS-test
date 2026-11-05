@@ -8,6 +8,9 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: HomeWorkPW
 
 
     steps:
@@ -31,24 +34,15 @@ jobs:
 
       - name: Run All
         if: ${{ !cancelled() }}
-        run: npm run tests:All -- --reporter=html
+        run: npm run tests:all -- --reporter=html
         env:
-          PLAYWRIGHT_HTML_REPORT: playwright-report-api
+          PLAYWRIGHT_HTML_REPORT: playwright-report
 
 
-      - name: Upload UI test report
+      - name: Upload report
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report-ui
-          path: playwright-report-ui/
-          retention-days: 7
-
-
-      - name: Upload API test report
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: playwright-report-api
-          path: playwright-report-api/
+          name: playwright-report
+          path: HomeWorkPW/playwright-report/
           retention-days: 7
