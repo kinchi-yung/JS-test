@@ -7,7 +7,7 @@ const CheckoutStepOnePage = require('../pages/CheckoutStepOnePage');
 const CheckoutStepTwoPage = require('../pages/CheckoutStepTwoPage');
 const CheckoutCompletePage = require('../pages/CheckoutCompletePage');
 
-test('покупка самого дорогого товара', async ({ page }) => {
+test('покупка самого дорогого товара', {tag: "@e2e"}, async ({ page }) => {
   const loginPage = new LoginPage(page);
   const inventoryPage = new InventoryPage(page);
   const cartPage = new CartPage(page);
