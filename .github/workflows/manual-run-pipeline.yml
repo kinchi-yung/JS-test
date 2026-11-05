@@ -34,7 +34,7 @@ jobs:
 
       - name: Run All
         if: ${{ !cancelled() }}
-        run: npm run tests:all -- --reporter=html
+        run: npm run All -- --reporter=html
         env:
           PLAYWRIGHT_HTML_REPORT: playwright-report
 
