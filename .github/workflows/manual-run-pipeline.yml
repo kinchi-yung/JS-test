@@ -29,7 +29,6 @@ jobs:
         run: npx playwright install --with-deps
 
 
-       !cancelled():
       - name: Run All
         if: ${{ !cancelled() }}
         run: npm run tests:All -- --reporter=html
